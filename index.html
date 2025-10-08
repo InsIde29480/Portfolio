@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio – Ingénieur Logiciel</title>
+  <style>
+    /* ---------- BASE ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at top left, #1c1c1c, #0f0f0f);
+      color: #f5f5f5;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    section {
+      padding: 100px 10%;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h1, h2, h3 {
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    /* ---------- HEADER ---------- */
+    header {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.9)),
+                  url('https://www.transparenttextures.com/patterns/dark-mosaic.png');
+      background-size: cover;
+      background-repeat: repeat;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      color: #ffffff;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #cccccc;
+      margin-bottom: 30px;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background: #ffffff;
+      color: #111;
+      padding: 12px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .cta-btn:hover {
+      background: #e5e5e5;
+      transform: scale(1.05);
+    }
+
+    /* ---------- À PROPOS ---------- */
+    #about {
+      background: linear-gradient(145deg, #181818, #0e0e0e);
+      border-top: 1px solid #333;
+      border-bottom: 1px solid #333;
+    }
+
+    #about p {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: justify;
+    }
+
+    /* ---------- EXPÉRIENCES ---------- */
+    .experience-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .experience-card {
+      background: #141414;
+      padding: 30px;
+      border-radius: 12px;
+      border: 1px solid #333;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .experience-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+    }
+
+    /* ---------- PROJETS ---------- */
+    #projects {
+      background: linear-gradient(160deg, #0f0f0f, #1a1a1a);
+    }
+
+    .project-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .project {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      border: 1px solid #333;
+    }
+
+    .project img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+      filter: brightness(0.8);
+    }
+
+    .project:hover img {
+      transform: scale(1.1);
+      filter: brightness(1);
+    }
+
+    .project-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .project:hover .project-overlay {
+      opacity: 1;
+    }
+
+    /* ---------- CONTACT ---------- */
+    #contact {
+      background: #0c0c0c;
+      text-align: center;
+      padding-bottom: 120px;
+    }
+
+    #contact p a {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+      section {
+        padding: 60px 5%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h1>Prénom Nom</h1>
+    <p>Ingénieur Logiciel – Développement d'Applications (ILIADE)</p>
+    <a href="https://github.com/ton-profil" class="cta-btn" target="_blank">Télécharger mon CV</a>
+  </header>
+
+  <!-- À PROPOS -->
+  <section id="about">
+    <h2>À propos</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at ultricies nulla. 
+      Quisque tempus eros nec purus laoreet, in mattis nunc efficitur. 
+      Sed vehicula, enim ac varius dignissim, lacus massa pulvinar mauris, 
+      ac pharetra arcu nulla et sapien. Donec ut faucibus nisl. 
+    </p>
+  </section>
+
+  <!-- EXPÉRIENCES -->
+  <section id="experience">
+    <h2>Expériences significatives</h2>
+    <div class="experience-grid">
+      <div class="experience-card">
+        <h3>Poste / Projet 1</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut nisi ac augue bibendum.</p>
+      </div>
+      <div class="experience-card">
+        <h3>Poste / Projet 2</h3>
+        <p>Proin condimentum, metus et faucibus tempor, lectus massa ultricies justo, vitae pharetra metus.</p>
+      </div>
+      <div class="experience-card">
+        <h3>Poste / Projet 3</h3>
+        <p>Mauris luctus risus nec leo tempor, sit amet bibendum enim tempor. Donec aliquet sapien non sapien.</p>
+      </div>
+      <div class="experience-card">
+        <h3>Poste / Projet 4</h3>
+        <p>Sed ullamcorper orci ut turpis pretium, nec rhoncus orci volutpat. Nam lacinia lacus at dolor dictum.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJETS -->
+  <section id="projects">
+    <h2>Projets</h2>
+    <div class="project-gallery">
+      <div class="project">
+        <img src="https://via.placeholder.com/400x250" alt="Projet 1">
+        <div class="project-overlay">
+          <p>Projet 1 – Lorem ipsum dolor sit amet.</p>
+        </div>
+      </div>
+      <div class="project">
+        <img src="https://via.placeholder.com/400x250" alt="Projet 2">
+        <div class="project-overlay">
+          <p>Projet 2 – Lorem ipsum dolor sit amet.</p>
+        </div>
+      </div>
+      <div class="project">
+        <img src="https://via.placeholder.com/400x250" alt="Projet 3">
+        <div class="project-overlay">
+          <p>Projet 3 – Lorem ipsum dolor sit amet.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Pour toute question ou opportunité, n’hésitez pas à me contacter à l’adresse suivante :</p>
+    <p><a href="mailto:prenom.nom@email.com">prenom.nom@email.com</a></p>
+    <p>Ou via mon profil LinkedIn : <a href="https://linkedin.com/in/ton-profil" target="_blank">linkedin.com/in/ton-profil</a></p>
+  </section>
+
+</body>
+</html>
