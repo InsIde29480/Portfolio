@@ -23,3 +23,17 @@ const appearOnScroll = new IntersectionObserver(
 sections.forEach(section => {
   appearOnScroll.observe(section);
 });
+
+// Effet parallax doux sur les rayons lumineux du header
+const header = document.querySelector("header");
+const rays = header; // Les rayons sont gérés par le pseudo-élément ::after
+
+document.addEventListener("mousemove", (e) => {
+  const { innerWidth, innerHeight } = window;
+  const x = (e.clientX / innerWidth - 0.5) * 10; // mouvement horizontal limité
+  const y = (e.clientY / innerHeight - 0.5) * 10; // mouvement vertical limité
+
+  // Mise à jour dynamique de la position du gradient des rayons
+  header.style.setProperty("--ray-x", `${50 + x}%`);
+  header.style.setProperty("--ray-y", `${-20 + y}%`);
+});
