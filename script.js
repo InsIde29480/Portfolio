@@ -68,13 +68,26 @@ const projectsData = {
       "https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg",
       "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
     ]
+  },
+  compression: {
+    title: "Compression d'une image",
+    description: "Logiciel C, permettant la compression d'une image plus ou moins forte.",
+    video: "https://videos.pexels.com/video-files/3184287/3184287-hd_1920_1080_25fps.mp4",
+    techs: [
+      "https://humancoders-formations.s3.eu-west-1.amazonaws.com/uploads/course/logo/1825/formation-langage-c-les-bases.png"
+    ]
   }
 };
 
 // Ouvre le popup au clic sur une carte
 document.querySelectorAll(".project-card").forEach(card => {
   card.addEventListener("click", e => {
-    // empêche le lien "Voir le projet" de naviguer
+    // Si le clic est sur le lien "Voir le projet", ne pas ouvrir le modal
+    if (e.target.closest('.project-link')) {
+      // Laisser le comportement par défaut (ouvrir le lien)
+      return;
+    }
+
     e.preventDefault();
 
     const key = card.dataset.project;
