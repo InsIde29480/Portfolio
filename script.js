@@ -41,7 +41,6 @@ document.addEventListener("mousemove", (e) => {
 const modal = document.getElementById("project-modal");
 const closeBtn = document.querySelector(".close-btn");
 
-// Données des projets
 const projectsData = {
   agario: {
     title: "AGARIO | Projet Kotlin",
@@ -49,7 +48,6 @@ const projectsData = {
     video: "https://videos.pexels.com/video-files/852348/852348-hd_1920_1080_25fps.mp4",
     techs: [
       "https://upload.wikimedia.org/wikipedia/commons/7/74/Kotlin_Icon.png",
-      "https://upload.wikimedia.org/wikipedia/en/3/30/Java_programming_language_logo.svg",
       "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/IntelliJ_IDEA_Icon.svg/512px-IntelliJ_IDEA_Icon.svg.png"
     ]
   },
@@ -58,8 +56,7 @@ const projectsData = {
     description: "Simulation d'interaction entre agents réalisée sous Godot Engine, illustrant les comportements collaboratifs.",
     video: "https://videos.pexels.com/video-files/3195396/3195396-hd_1920_1080_25fps.mp4",
     techs: [
-      "https://upload.wikimedia.org/wikipedia/commons/6/6a/Godot_icon.svg",
-      "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg"
+      "https://upload.wikimedia.org/wikipedia/commons/6/6a/Godot_icon.svg"
     ]
   },
   crypto: {
@@ -69,53 +66,47 @@ const projectsData = {
     techs: [
       "https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg",
       "https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg",
-      "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
-      "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg"
+      "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
     ]
   }
 };
 
-// Ouvre la modal
+// Ouvre le popup au clic sur une carte
 document.querySelectorAll(".project-card").forEach(card => {
-  card.addEventListener("click", () => {
-    const alt = card.querySelector("img").alt.toLowerCase();
+  card.addEventListener("click", e => {
+    // empêche le lien "Voir le projet" de naviguer
+    e.preventDefault();
 
-    const projectKey =
-      alt.includes("agario") ? "agario" :
-      alt.includes("godot") ? "godot" :
-      alt.includes("crypto") ? "crypto" : null;
+    const key = card.dataset.project;
+    const p = projectsData[key];
+    if (!p) return;
 
-    if (projectKey && projectsData[projectKey]) {
-      const p = projectsData[projectKey];
-      document.getElementById("modal-title").textContent = p.title;
-      document.getElementById("modal-description").textContent = p.description;
+    document.getElementById("modal-title").textContent = p.title;
+    document.getElementById("modal-description").textContent = p.description;
 
-      // Ajout des icônes
-      const techContainer = document.getElementById("modal-techs");
-      techContainer.innerHTML = "";
-      p.techs.forEach(src => {
-        const img = document.createElement("img");
-        img.src = src;
-        img.alt = "tech-icon";
-        techContainer.appendChild(img);
-      });
+    const techContainer = document.getElementById("modal-techs");
+    techContainer.innerHTML = "";
+    p.techs.forEach(src => {
+      const img = document.createElement("img");
+      img.src = src;
+      techContainer.appendChild(img);
+    });
 
-      // Vidéo
-      const video = document.getElementById("modal-video");
-      video.querySelector("source").src = p.video;
-      video.load();
+    const video = document.getElementById("modal-video");
+    video.querySelector("source").src = p.video;
+    video.load();
 
-      modal.style.display = "flex";
-    }
+    modal.style.display = "flex";
   });
 });
 
-// Fermeture
+// Fermer
 closeBtn.addEventListener("click", () => {
   modal.style.display = "none";
   document.getElementById("modal-video").pause();
 });
 
+// Fermer si clic à l’extérieur
 window.addEventListener("click", e => {
   if (e.target === modal) {
     modal.style.display = "none";
