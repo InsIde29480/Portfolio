@@ -45,7 +45,6 @@ const projectsData = {
   agario: {
     title: "AGARIO | Projet Kotlin",
     description: "Jeu développé en Kotlin lors du Master 1. Projet en équipe avec serveur local et gestion des entités en réseau.",
-    video: "https://video.mp4",
     techs: [
       "https://upload.wikimedia.org/wikipedia/commons/7/74/Kotlin_Icon.png"
     ]
@@ -53,7 +52,6 @@ const projectsData = {
   godot: {
     title: "Gestion multi-agents | Projet Godot",
     description: "Simulation d'interaction entre agents réalisée sous Godot Engine, illustrant les comportements collaboratifs.",
-    video: "https://video.mp4",
     techs: [
       "https://upload.wikimedia.org/wikipedia/commons/6/6a/Godot_icon.svg"
     ]
@@ -61,7 +59,6 @@ const projectsData = {
   crypto: {
     title: "Visualisation des transferts crypto",
     description: "Application web de suivi et visualisation de transactions blockchain avec interface simplifiée.",
-    video: "https://video.mp4",
     techs: [
       "https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg",
       "https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg",
@@ -71,7 +68,6 @@ const projectsData = {
   compression: {
     title: "Compression d'une image",
     description: "Logiciel C, permettant la compression d'une image plus ou moins forte.",
-    video: "https://video.mp4",
     techs: [
       "https://humancoders-formations.s3.eu-west-1.amazonaws.com/uploads/course/logo/1825/formation-langage-c-les-bases.png"
     ]
@@ -79,7 +75,6 @@ const projectsData = {
   IA: {
     title: "Réseau de neurones pytorch | Gite de naviagtion",
     description: "Entrainement d'un modèle de réseau de neurones en pytorch pour prédire la gite d'un voilier à partir de données de navigation stockées dans une base TimeScaleDB.",
-    video: "https://video.mp4",
     techs: [
       "https://upload.wikimedia.org/wikipedia/commons/1/10/PyTorch_logo_icon.svg",
       "https://a.storyblok.com/f/192697/1920x1080/ac1dc4864a/docker-post.png"
