@@ -14,7 +14,7 @@
   <header id="header">
     <div class="header-content">
       <h1>Pierre Cousineau</h1>
-      <p>Ingénieur Logiciel – Développement d'Applications</p>
+      <p>Ingénieur Logiciel</p>
       <a href="src/Cousineau_Pierre_CV.pdf" class="cta-btn" target="_blank">Télécharger mon CV</a>
     </div>
   </header>
@@ -23,10 +23,10 @@
   <section id="about">
     <h2>À propos</h2>
     <p>
-      Actuellement en MASTER 2 ILIADE (Ingénierie du Logiciel, Applications aux Données Environnementales), j'ai acquis
-      des compétences solides en développement
-      logiciel, logiciel embarqué, gestion de bases et analyse de données. je cherche à contribuer à des projets
-      stimulants et innovants dans le domaine du développement logiciel.
+      Actuellement en MASTER 2 ILIADE (Ingénierie du Logiciel, Applications aux Données Environnementales), après
+      plusieurs stages en entreprise, j'ai acquis des compétences solides en développement logiciel, logiciel embarqué,
+      gestion de bases et analyse de données. je cherche à contribuer à des projets stimulants et innovants dans le domaine
+      du développement logiciel.
     </p>
   </section>
 
@@ -34,6 +34,13 @@
   <section id="experience">
     <h2>Expériences significatives</h2>
     <div class="experience-grid">
+      <div class="experience-card">
+        <h3>Système multi-agents de test d'IHM par Vision Language</h3>
+        <p>Pour la validation de mon Master, j'ai réalisé un stage chez Thales Brest dans le service UX pour rechercher un
+          moyens de tester des IHM automatiquement sans passer par le code. Pour cela j'ai mis en place un script
+          d'interprétation des réponses données par les modèles suite à une étude d'une capture d'écran.
+        </p>
+      </div>
       <div class="experience-card">
         <h3>CESARE | Application interne Thales</h3>
         <p>J'ai pu travail pendant 5 mois à Thales SIX laval sur un projet de logiciel interne.
@@ -114,33 +121,19 @@
           <a href="https://github.com/InsIde29480/Reseau_de_neuronnes_GIT" class="project-link">Voir le projet</a>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- POPUP MODAL PROJET -->
-  <div id="project-modal" class="modal">
-    <div class="modal-content">
-      <span class="close-btn">&times;</span>
-      <div class="modal-body">
-        <!-- Partie gauche : texte -->
-        <div class="modal-left">
-          <h3 id="modal-title">Titre du projet</h3>
-          <p id="modal-description">Description du projet...</p>
-          <div id="modal-techs" class="tech-list">
-            <!-- Icônes/langages -->
-          </div>
-        </div>
-        <!-- Partie droite : vidéo -->
-        <div class="modal-right">
-          <video id="modal-video" controls>
-            <source src="" type="video/mp4">
-            Votre navigateur ne supporte pas la vidéo.
-          </video>
+      <div class="project-card" data-project="Movie">
+        <img src="./src/img/.png" alt="Projet 5">
+        <div class="project-info">
+          <h3>Interface de streaming local</h3>
+          <p> Réalisation en projet personnel d'un site de streaming local pour pouvoir convertir, visionner et caster des films sur le réseau local.
+            La comprehension des formats d'encodage (audio, video, texte), des conversion ffmpeg, des appels API (TMBD, Opensub), du chromecast.
+          </p>
+          <a href="https://github.com/InsIde29480/CineLocal" class="project-link">Voir le projet</a>
         </div>
       </div>
     </div>
-  </div>
-
+  </section>
 
   <!-- CONTACT -->
   <section id="contact">
